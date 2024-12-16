@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="525.0" prefWidth="875.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.Logowanie">
+   <children>
+      <VBox alignment="CENTER" layoutX="225.0" layoutY="14.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="403.0" prefWidth="426.0" style="-fx-background-color: grey; -fx-background-radius: 50px; -fx-border-style: solid; -fx-border-width: 5px; -fx-border-radius: 40px;">
+         <children>
+            <Label text="LOGOWANIE">
+               <font>
+                  <Font size="30.0" />
+               </font>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </Label>
+            <Label text="LOGIN:">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Label>
+            <TextField maxWidth="150.0" prefHeight="20.0" prefWidth="20.0">
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin></TextField>
+            <Label text="HASŁO:">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin></Label>
+            <TextField maxWidth="150.0" prefHeight="20.0" prefWidth="20.0">
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin></TextField>
+            <Button mnemonicParsing="false" onAction="#switchToSecondPage2" text="Dalej">
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin></Button>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
