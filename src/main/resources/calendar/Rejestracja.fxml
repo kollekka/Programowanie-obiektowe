@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane minHeight="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.Rejestracja">
+    <children>
+        <VBox alignment="CENTER" layoutX="225.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="530.0" prefWidth="426.0" style="-fx-background-color: grey; -fx-background-radius: 50px; -fx-border-style: solid; -fx-border-width: 5px; -fx-border-radius: 40px;" AnchorPane.bottomAnchor="108.0" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="224.0" AnchorPane.topAnchor="14.0">
+            <children>
+                <Label text="KALENDARZYK" textAlignment="CENTER" textFill="#ffe5e5">
+                    <font>
+                        <Font size="30.0" />
+                    </font></Label>
+                <Label text="REJESTRACJA" textFill="#ffe5e5">
+                    <font>
+                        <Font size="30.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="20.0" />
+                    </VBox.margin>
+                </Label>
+            <Label text="E-mail" textFill="#ffe5e5" />
+            <TextField fx:id="emailField" maxWidth="150.0" prefWidth="0.0">
+               <VBox.margin>
+                  <Insets bottom="30.0" />
+               </VBox.margin>
+            </TextField>
+                <Label text="Nazwa:" textFill="#ffe5e5">
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin></Label>
+                <TextField fx:id="usernameField" maxWidth="150.0" prefHeight="20.0" prefWidth="20.0">
+                    <VBox.margin>
+                        <Insets bottom="30.0" />
+                    </VBox.margin></TextField>
+                <Label text="Hasło" textFill="#ffe5e5">
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin></Label>
+                <PasswordField fx:id="passwordField" maxWidth="150.0">
+                    <VBox.margin>
+                        <Insets bottom="30.0" />
+                    </VBox.margin>
+                </PasswordField>
+                <Button mnemonicParsing="false" onAction="#handleRegisterButtonAction" style="-fx-border-radius: 50px; -fx-border-style: solid; -fx-background-radius: 50px;" text="Zaloguj" textAlignment="CENTER">
+                    <VBox.margin>
+                        <Insets bottom="30.0" />
+                    </VBox.margin>
+                    <padding>
+                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
+                    </padding></Button>
+                <Label fx:id="errorLabel">
+                    <font>
+                        <Font size="18.0" />
+                    </font>
+                </Label>
+            </children>
+         <padding>
+            <Insets top="20.0" />
+         </padding>
+        </VBox>
+    </children>
+</AnchorPane>

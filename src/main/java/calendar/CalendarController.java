@@ -49,17 +49,32 @@ public class CalendarController {
         LocalDate firstDayOfMonth = currentYearMonth.atDay(1);
         int dayOfWeek = firstDayOfMonth.getDayOfWeek().getValue() % 7; // Adjust for GridPane starting index
 
-        List<Label> dayLabels = new ArrayList<>();
+        List<Button> dayButtons = new ArrayList<>();
         for (int i = 0; i < currentYearMonth.lengthOfMonth(); i++) {
-            Label dayLabel = new Label(String.valueOf(i + 1));
-            dayLabels.add(dayLabel);
+            final int day = i + 1;
+            // Create a new button instead of a label
+            Button dayButton = new Button(String.valueOf(i + 1));
+
+            // (Optional) Add an action to the button
+            dayButton.setOnAction(event -> {
+                try {
+                    LocalDate selectedDate = currentYearMonth.atDay(day);
+                    SelectedDate.setDate(selectedDate);
+                    // Here you put the name of the .fxml file you want to switch to.
+                    switchScene("/calendar/Dodawanie.fxml");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            });
+
+            dayButtons.add(dayButton);
         }
 
         int column = dayOfWeek;
         int row = 0;
 
-        for (Label dayLabel : dayLabels) {
-            calendarGrid.add(dayLabel, column, row);
+        for (Button dayButton : dayButtons) {
+            calendarGrid.add(dayButton, column, row);
             column++;
             if (column == 7) {
                 column = 0;
