@@ -1,8 +1,9 @@
-package calendar;
+package calendar.model;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "events")
@@ -23,24 +24,27 @@ public class Event {
     private String description;
 
     @Column(name = "start_time")
-    private LocalDateTime startTime;
+    private LocalDate startTime;
 
     @Column(name = "end_time")
-    private LocalDateTime endTime;
+    private LocalDate endTime;
 
     @Column(name = "created_at")
     private LocalDateTime createdAt;
+
+    @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<EventParticipant> participants;
 
     public Event(String title, String description, LocalDate startTime,
                  LocalDate endTime, User user) { // dodajemy Usera do konstruktora
         this.title = title;
         this.description = description;
-        this.startTime = startTime.atStartOfDay();
-        this.endTime = endTime.atStartOfDay();
+        this.startTime = LocalDate.from(startTime.atStartOfDay());
+        this.endTime = LocalDate.from(endTime.atStartOfDay());
         this.user = user; // przypisujemy Usera
     }
 
-    // Getters and setters hidden for brevity
+
 
     public int getId() {
         return id;
@@ -74,19 +78,19 @@ public class Event {
         this.description = description;
     }
 
-    public LocalDateTime getStartTime() {
+    public LocalDate getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(LocalDateTime startTime) {
+    public void setStartTime(LocalDate startTime) {
         this.startTime = startTime;
     }
 
-    public LocalDateTime getEndTime() {
+    public LocalDate getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(LocalDateTime endTime) {
+    public void setEndTime(LocalDate endTime) {
         this.endTime = endTime;
     }
 
@@ -101,7 +105,7 @@ public class Event {
     public Event() {
     }
 
-    public Event(int id, User user, String title, String description, LocalDateTime startTime, LocalDateTime endTime, LocalDateTime createdAt) {
+    public Event(int id, User user, String title, String description, LocalDate startTime, LocalDate endTime, LocalDateTime createdAt) {
         this.id = id;
         this.user = user;
         this.title = title;
@@ -109,5 +113,10 @@ public class Event {
         this.startTime = startTime;
         this.endTime = endTime;
         this.createdAt = createdAt;
+    }
+
+    public int getDayOfWeek() {
+        int dayOfWeek = this.startTime.getDayOfWeek().getValue();
+        return (dayOfWeek == 7) ? 0 : dayOfWeek;
     }
 }

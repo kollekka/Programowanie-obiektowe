@@ -1,18 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.Dodawanie">
+<AnchorPane prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.controler.DodawanieController">
    <children>
-      <Label fx:id="selectedDateLabel" layoutX="265.0" layoutY="192.0" text="Label" />
-      <Label fx:id="dayLabel" layoutX="162.0" layoutY="209.0" text="Label" />
-      <Label fx:id="monthLabel" layoutX="265.0" layoutY="209.0" text="Label" />
-      <Label fx:id="yearLabel" layoutX="377.0" layoutY="209.0" text="Label" />
-      <DatePicker fx:id="startTimePicker" layoutX="206.0" layoutY="278.0" />
-      <DatePicker fx:id="endTimePicker" layoutX="206.0" layoutY="314.0" />
-      <TextArea fx:id="descriptionArea" layoutX="6.0" prefHeight="200.0" prefWidth="200.0" />
-      <TextField fx:id="titleField" layoutX="242.0" layoutY="63.0" />
-      <Button layoutX="100.0" layoutY="314.0" mnemonicParsing="false" onAction="#saveEvent" text="Button" />
+      <VBox alignment="CENTER" style="-fx-background-radius: 50px; -fx-border-width: 2px; -fx-border-color: black;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" text="DODAWANIE WYDARZENIA">
+               <font>
+                  <Font size="36.0" />
+               </font></Label>
+            <HBox alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Label text="Tytuł wydarzenia:" />
+                        <TextField fx:id="titleField" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="149.0" />
+                        <Label text="Data Startu Wydarzenia:" />
+                        <DatePicker fx:id="startTimePicker" prefHeight="25.0" prefWidth="149.0" />
+                        <Label text="Data Końca Wydarzenia" />
+                        <DatePicker fx:id="endTimePicker" prefHeight="25.0" prefWidth="149.0" />
+                     </children>
+                  </VBox>
+                  <Label prefHeight="28.0" prefWidth="103.0" text="Opis wydarzenia:">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin></Label>
+                  <TextArea fx:id="descriptionArea" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="155.0" prefWidth="140.0" />
+               </children>
+            </HBox>
+            <Button mnemonicParsing="false" onAction="#saveEvent" text="Dodaj" />
+            <Label fx:id="errorLabel" />
+            <HBox alignment="BOTTOM_RIGHT" prefHeight="100.0" prefWidth="796.0">
+               <children>
+                  <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchToSecondPage" text="Cofnij" textAlignment="CENTER">
+                     <HBox.margin>
+                        <Insets right="10.0" />
+                     </HBox.margin>
+                  </Button>
+               </children></HBox>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

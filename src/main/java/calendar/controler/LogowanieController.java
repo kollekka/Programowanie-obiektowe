@@ -1,5 +1,8 @@
-package calendar;
+package calendar.controler;
 
+import calendar.model.User;
+import calendar.service.UserService;
+import calendar.service.UserSession;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -11,8 +14,9 @@ import org.hibernate.cfg.Configuration;
 import javafx.event.ActionEvent;
 
 import static calendar.Main.switchScene;
+import static calendar.service.UserSession.cleanUserSession;
 
-public class Logowanie {
+public class LogowanieController {
 
     private static final SessionFactory sessionFactory;
 
@@ -36,6 +40,7 @@ public class Logowanie {
 
     @FXML
     private Label errorLabel;
+
 
     @FXML
     private void switchToSecondPage2() {
@@ -73,6 +78,7 @@ public class Logowanie {
         } else {
             errorLabel.setText("Nieprawidłowe dane logowania!");
         }
+        UserSession.getInstance(user);
     }
 }
 

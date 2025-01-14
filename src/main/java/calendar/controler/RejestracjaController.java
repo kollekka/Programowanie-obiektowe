@@ -1,5 +1,6 @@
-package calendar;
+package calendar.controler;
 
+import calendar.service.UserService;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
@@ -8,7 +9,7 @@ import javafx.scene.control.TextField;
 
 import static calendar.Main.switchScene;
 
-public class Rejestracja {
+public class RejestracjaController {
     @FXML
     private TextField usernameField;
 
@@ -26,6 +27,14 @@ public class Rejestracja {
 
     @FXML
     private void switchToSecondPage() {
+        try {
+            switchScene("/calendar/Logowanie.fxml");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    @FXML
+    private void switchToSecondPage2() {
         try {
             switchScene("/calendar/Logowanie.fxml");
         } catch (Exception e) {

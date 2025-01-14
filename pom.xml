@@ -6,7 +6,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>calendar</groupId>
-    <artifactId>UwU</artifactId>
+    <artifactId>Kalendarz</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>

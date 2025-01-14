@@ -1,10 +1,15 @@
-package calendar;
+package calendar.service;
 
+import calendar.config.HibernateUtil;
+import calendar.model.User;
 import org.hibernate.Session;
 import org.hibernate.SessionBuilder;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 public class UserService {
@@ -49,7 +54,6 @@ public class UserService {
     }
     public User getUserByUsername(String username) {
         Session session = HibernateUtil.getSessionFactory().openSession();
-
         try {
             Query query = session.createQuery("FROM User WHERE username = :username");
             ((Query<?>) query).setParameter("username", username);
@@ -91,5 +95,42 @@ public class UserService {
 
         return userExists;
     }
+    public User findUserByEmail(String email) {
+        Session session = null;
+        Transaction transaction = null;
+        User user = null;
 
+        try {
+            session = HibernateUtil.getSessionFactory().openSession();
+            transaction = session.beginTransaction();
+
+            CriteriaBuilder cb = session.getCriteriaBuilder();
+            CriteriaQuery<User> cr = cb.createQuery(User.class);
+            Root<User> root = cr.from(User.class);
+
+            // Here we add the condition for the query.
+            cr.where(cb.equal(root.get("email"), email));
+
+            Query<User> query = session.createQuery(cr);
+            List<User> resultList = query.getResultList();
+
+            if (!resultList.isEmpty()) {
+                // Assume that email is unique and get the first result.
+                user = resultList.get(0);
+            }
+
+            transaction.commit();
+        } catch (Exception e) {
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace();
+        } finally {
+            if (session != null) {
+                session.close();
+            }
+        }
+
+        return user;
+    }
 }

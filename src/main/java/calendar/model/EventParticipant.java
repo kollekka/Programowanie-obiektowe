@@ -1,12 +1,26 @@
-package calendar;
+package calendar.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "event_participants") // name to nazwa twojej tabeli
 public class EventParticipant {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @ManyToOne
+    @JoinColumn(name = "eventid", nullable = false) // name to nazwa kolumny w twojej tabeli
     private Event event;
+
+    @ManyToOne (fetch = FetchType.EAGER)
+    @JoinColumn(name = "participantid", nullable = false) // name to nazwa kolumny w twojej tabeli
     private User participant;
+
+    @Column(name = "status")
     private String status;
 
-    // Gettery i Settery
     public Long getId() {
         return id;
     }

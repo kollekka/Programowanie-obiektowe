@@ -5,73 +5,36 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="875.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.CalendarController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="875.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.controler.CalendarController">
     <children>
-        <Label fx:id="monthYearLabel" alignment="CENTER" layoutX="518.0" layoutY="15.0" text="Label" AnchorPane.rightAnchor="310.0" AnchorPane.topAnchor="15.0">
-         <font>
-            <Font size="20.0" />
-         </font></Label>
-        <Button fx:id="prevMonthButton" layoutX="182.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToPreviousMonth" prefHeight="44.0" prefWidth="98.0" style="-fx-background-color: none;" text="PREV" textFill="#8a8500" AnchorPane.leftAnchor="182.0" AnchorPane.rightAnchor="595.0">
-         <font>
-            <Font size="20.0" />
-         </font></Button>
-        <Button fx:id="nextMonthButton" layoutX="765.0" layoutY="8.0" mnemonicParsing="false" onAction="#goToNextMonth" prefHeight="44.0" prefWidth="85.0" style="-fx-background-color: none;" text="NEXT" textFill="#8a8500" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="8.0">
-         <font>
-            <Font size="20.0" />
-         </font></Button>
-        <GridPane fx:id="calendarGrid" alignment="CENTER" focusTraversable="true" gridLinesVisible="true" hgap="1.0" layoutX="166.0" layoutY="124.0" prefHeight="439.0" prefWidth="675.0" style="visibility: true; -fx-border-color: black; -fx-border-style: solid;" vgap="1.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="80.0">
-            <columnConstraints>
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
-                <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="50.0" />
-            </columnConstraints>
-            <rowConstraints>
-                <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="71.0" minHeight="10.0" prefHeight="52.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="74.0" minHeight="10.0" prefHeight="74.0" valignment="CENTER" vgrow="NEVER" />
-                <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="50.0" valignment="CENTER" vgrow="SOMETIMES" />
-            </rowConstraints>
-         <opaqueInsets>
-            <Insets />
-         </opaqueInsets>
-        </GridPane>
-        <VBox layoutX="22.0" layoutY="15.0" prefHeight="394.0" prefWidth="144.0">
+        <VBox alignment="CENTER" layoutX="238.0" layoutY="15.0" prefHeight="394.0" prefWidth="425.0" style="-fx-background-color: grey; -fx-border-color: black; -fx-border-width: 3px; -fx-background-radius: 50px; -fx-border-radius: 50px;" AnchorPane.bottomAnchor="116.0" AnchorPane.leftAnchor="238.0" AnchorPane.rightAnchor="212.0" AnchorPane.topAnchor="15.0">
          <children>
             <Label text="MENU">
                <font>
                   <Font size="26.0" />
                </font>
                <VBox.margin>
-                  <Insets left="35.0" />
+                  <Insets />
                </VBox.margin>
             </Label>
-            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="97.0" style="-fx-background-color: yellow;" text="Strona Główna">
+            <Button fx:id="switchButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchToSecondPage" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: beige; -fx-background-radius: 30px; -fx-border-style: solid; -fx-border-radius: 30px;" text="Login" textAlignment="CENTER">
                <VBox.margin>
-                  <Insets left="25.0" top="45.0" />
+                  <Insets left="5.0" top="45.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="switchButton" mnemonicParsing="false" onAction="#switchToSecondPage" prefHeight="25.0" prefWidth="96.0" style="-fx-background-color: yellow;" text="Login">
+            <Button fx:id="switchButton2" alignment="CENTER" mnemonicParsing="false" onAction="#switchToSecondPage4" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: beige; -fx-background-radius: 30px; -fx-border-style: solid; -fx-border-radius: 30px;" text="Dodawanie" textAlignment="CENTER">
                <VBox.margin>
-                  <Insets left="25.0" top="45.0" />
+                  <Insets top="45.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="switchButton2" mnemonicParsing="false" onAction="#switchToSecondPage4" prefHeight="16.0" prefWidth="98.0" style="-fx-background-color: yellow;" text="Dodawanie">
+            <Button fx:id="switchButton21" alignment="CENTER" layoutX="186.0" layoutY="306.0" mnemonicParsing="false" onAction="#switchToSecondPage2" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: beige; -fx-background-radius: 30px; -fx-border-style: solid; -fx-border-radius: 30px;" text="Moje Wydarzenia" textAlignment="CENTER">
                <VBox.margin>
-                  <Insets left="25.0" top="45.0" />
-               </VBox.margin>
-            </Button>
+                  <Insets top="45.0" />
+               </VBox.margin></Button>
+            <Button fx:id="switchButton211" alignment="CENTER" layoutX="174.0" layoutY="319.0" mnemonicParsing="false" onAction="#switchToSecondPage3" prefHeight="25.0" prefWidth="130.0" style="-fx-background-color: beige; -fx-background-radius: 30px; -fx-border-style: solid; -fx-border-radius: 30px;" text="Zaproszenia " textAlignment="CENTER">
+               <VBox.margin>
+                  <Insets top="45.0" />
+               </VBox.margin></Button>
          </children></VBox>
-      <Label layoutX="505.0" layoutY="58.0" />
-      <Label layoutX="795.0" layoutY="58.0" />
-      <Label layoutX="697.0" layoutY="58.0" />
-      <Label layoutX="609.0" layoutY="58.0" />
-      <Label layoutX="414.0" layoutY="58.0" />
-      <Label layoutX="320.0" layoutY="58.0" />
     </children>
 </AnchorPane>

@@ -1,4 +1,4 @@
-package calendar;
+package calendar.service;
 
 import java.time.LocalDate;
 

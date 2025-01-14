@@ -1,8 +1,7 @@
-package calendar;
+package calendar.model;
 
 
 import javax.persistence.*;
-import java.awt.event.ActionEvent;
 import java.sql.Timestamp;
 
 @Entity

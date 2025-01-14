@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="600.0" maxWidth="800.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.controler.MojeWydarzeniaController">
+    <children>
+      <VBox alignment="CENTER" layoutX="-8.0" layoutY="-7.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="59.0" prefWidth="820.0">
+               <children>
+      
+                      <Button fx:id="prevButton" alignment="CENTER" text="Previous">
+                     <HBox.margin>
+                        <Insets right="100.0" />
+                     </HBox.margin>
+                  </Button>
+                      <Label fx:id="headerLabel" />
+                      <Button fx:id="nextButton" alignment="CENTER" text="Next">
+                     <HBox.margin>
+                        <Insets left="100.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <GridPane alignment="CENTER" focusTraversable="true" hgap="20.0" maxWidth="800.0" vgap="5.0" VBox.vgrow="NEVER">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label alignment="CENTER" contentDisplay="CENTER" text="Poniedziałek" textAlignment="CENTER" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label text="Wtorek" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label text="Środa" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label text="Czwartek" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label text="Piątek" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label text="Sobota" GridPane.columnIndex="5" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                  <Label contentDisplay="CENTER" text="Niedziela" GridPane.columnIndex="6" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+               </children>
+            </GridPane>
+              <GridPane fx:id="calendarGrid" alignment="CENTER" focusTraversable="true" hgap="40.0" maxWidth="800.0" vgap="5.0" VBox.vgrow="NEVER">
+                  <columnConstraints>
+                      <ColumnConstraints fillWidth="false" halignment="CENTER" prefWidth="100.0" />
+                      <ColumnConstraints fillWidth="false" halignment="CENTER" prefWidth="100.0" />
+                      <ColumnConstraints fillWidth="false" halignment="CENTER" prefWidth="100.0" />
+                      <ColumnConstraints fillWidth="false" halignment="CENTER" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" prefWidth="100.0" />
+                  </columnConstraints>
+                  <rowConstraints>
+                      <RowConstraints fillHeight="false" minHeight="40.0" prefHeight="60.0" />
+                      <RowConstraints fillHeight="false" minHeight="40.0" prefHeight="60.0" />
+                      <RowConstraints fillHeight="false" minHeight="40.0" prefHeight="60.0" />
+                      <RowConstraints fillHeight="false" minHeight="40.0" prefHeight="60.0" />
+                      <RowConstraints fillHeight="false" minHeight="40.0" prefHeight="60.0" />
+                      <RowConstraints fillHeight="false" minHeight="40.0" prefHeight="60.0" />
+                      <RowConstraints fillHeight="false" minHeight="40.0" prefHeight="60.0" />
+      
+                  </rowConstraints>
+              </GridPane>
+         </children>
+      </VBox>
+      <Button fx:id="CofnijButton" alignment="CENTER" mnemonicParsing="false" onAction="#switchToSecondPage" text="Cofnij" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+    </children>
+</AnchorPane>

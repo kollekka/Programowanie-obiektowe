@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane minHeight="-Infinity" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.Rejestracja">
+<AnchorPane minHeight="-Infinity" prefHeight="600.0" prefWidth="600.0" style="-fx-background-color: beige;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="calendar.controler.RejestracjaController">
     <children>
         <VBox alignment="CENTER" layoutX="225.0" layoutY="14.0" minHeight="-Infinity" minWidth="-Infinity" nodeOrientation="LEFT_TO_RIGHT" prefHeight="530.0" prefWidth="426.0" style="-fx-background-color: grey; -fx-background-radius: 50px; -fx-border-style: solid; -fx-border-width: 5px; -fx-border-radius: 40px;" AnchorPane.bottomAnchor="108.0" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="224.0" AnchorPane.topAnchor="14.0">
             <children>
@@ -44,13 +44,14 @@
                         <Insets bottom="30.0" />
                     </VBox.margin>
                 </PasswordField>
-                <Button mnemonicParsing="false" onAction="#handleRegisterButtonAction" style="-fx-border-radius: 50px; -fx-border-style: solid; -fx-background-radius: 50px;" text="Zaloguj" textAlignment="CENTER">
+                <Button mnemonicParsing="false" onAction="#handleRegisterButtonAction" style="-fx-border-radius: 50px; -fx-border-style: solid; -fx-background-radius: 50px;" text="Zarejestruj" textAlignment="CENTER">
                     <VBox.margin>
                         <Insets bottom="30.0" />
                     </VBox.margin>
                     <padding>
                         <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
                     </padding></Button>
+            <Button mnemonicParsing="false" onAction="#switchToSecondPage2" text="Zaloguj" />
                 <Label fx:id="errorLabel">
                     <font>
                         <Font size="18.0" />
